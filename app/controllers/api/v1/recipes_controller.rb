@@ -1,7 +1,11 @@
 class Api::V1::RecipesController < ApplicationController
   def index
     recipe = Recipe.all.order(created_at: :desc)
-    render json: recipe, status: :ok
+    if recipe
+      render json: recipe, status: :ok
+    else
+      render json: {}, status: :bad_request
+    end
   end
 
   def create
