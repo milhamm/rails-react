@@ -6,7 +6,7 @@ const Home = () => {
   const history = useHistory();
   return (
     <div>
-      <Button onClick={() => history.push("/recipes")}>Move to recipes</Button>
+      <Button onClick={() => history.push("/recipes")}>Move to recipe</Button>
     </div>
   );
 };
