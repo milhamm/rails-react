@@ -1,4 +1,4 @@
-import { Button, Card, List, notification } from "antd";
+import { Button, Card, List, notification, PageHeader } from "antd";
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import api from "../libs/api";
@@ -37,11 +37,24 @@ const Recipes = () => {
         message: "Successfully Deleted",
       });
     }
+
+    if (history.location.state?.successCreated) {
+      notification.success({
+        message: "Successfully Created",
+      });
+    }
   }, []);
 
   return (
     <div className="container">
-      <h1>Recipes</h1>
+      <PageHeader
+        title="Recipes"
+        extra={
+          <Button type="primary" onClick={() => history.push("/recipe/new")}>
+            New Recipe
+          </Button>
+        }
+      />
       <List
         dataSource={recipes}
         grid={{ gutter: 16, column: 3 }}

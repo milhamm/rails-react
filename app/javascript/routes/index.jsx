@@ -1,6 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "../components/Home";
+import NewRecipe from "../components/NewRecipe";
 import Recipe from "../components/Recipe";
 import Recipes from "../components/Recipes";
 
@@ -9,10 +15,13 @@ const Routes = () => {
     <Router>
       <Switch>
         <Route path="/" exact>
-          <Home />
+          <Redirect to="/recipes" />
         </Route>
         <Route path="/recipes" exact>
           <Recipes />
+        </Route>
+        <Route path="/recipe/new" exact>
+          <NewRecipe />
         </Route>
         <Route path="/recipe/:id" exact>
           <Recipe />

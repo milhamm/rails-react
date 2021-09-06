@@ -10,7 +10,7 @@ module.exports = getStyleRule(/\.less$/i, false, [
           dark: true,
           compact: true,
         }),
-        "primary-color": "#39c486",
+        "primary-color": "#fde900",
       },
       javascriptEnabled: true,
     },
