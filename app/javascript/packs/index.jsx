@@ -8,8 +8,5 @@ import App from "../components/App";
 import "antd/dist/antd.css";
 
 document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(
-    <App />,
-    document.body.appendChild(document.createElement("div"))
-  );
+  ReactDOM.render(<App />, document.getElementById("root"));
 });
