@@ -26,7 +26,10 @@ const Recipe = () => {
       .delete(`/recipes/${id}`)
       .then(() => {
         setDeleting(false);
-        history.push("/recipes", { successDeleted: true });
+        notification.success({
+          message: "Successfully Deleted",
+        });
+        history.push("/recipes");
       })
       .catch((err) => {
         console.log(err.response);

@@ -32,17 +32,6 @@ const Recipes = () => {
 
   useEffect(() => {
     getRecipes();
-    if (history.location.state?.successDeleted) {
-      notification.success({
-        message: "Successfully Deleted",
-      });
-    }
-
-    if (history.location.state?.successCreated) {
-      notification.success({
-        message: "Successfully Created",
-      });
-    }
   }, []);
 
   return (
